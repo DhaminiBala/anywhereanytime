@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./images/plane_9639471.png" />
+    <title>Anywhere-Anytime</title>
+
+    <!-- CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN  -->
+
+    <!-- FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <!-- FONTS  -->
+
+    <!-- START DATE & END DATE - BOOK NOW SECTION  -->
+    <script>
+        function startDateEvent() {
+            //alert("inside startDateEvent !");
+            const date = new Date();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let day = date.getDate();
+
+            if (month < 10)
+                month = '0' + month.toString();
+
+            if (day < 10)
+                day = '0' + day.toString();
+
+            let minDate = `${year}-${month}-${day}`;
+
+            $('#startdate').attr('min', minDate)
+
+        }
+
+        function endDateEvent() {
+            const startDate = new Date($('#startdate').val()) || new Date; //to get the start date input by the user
+            
+            let newDate = new Date(Date.parse(startDate));
+            newDate.setDate(newDate.getDate() + 1)
+
+
+            let month = newDate.getMonth() + 1;
+            let year = newDate.getFullYear();
+            let day = newDate.getDate();
+
+            if (month < 10)
+                month = '0' + month.toString();
+
+            if (day < 10)
+                day = '0' + day.toString();
+
+            let minDate = `${year}-${month}-${day}`;
+
+            $('#enddate').attr('min', minDate)
+
+        }
+
+        // START DATE & END DATE - BOOK NOW SECTION 
+
+        // DETAILS FIELD - BOOK NOW SEC 
+        function handleBooked(event) {
+
+            // alert("Booking Successful!"+ $('#details').val())
+            // alert($('#details').val().length)
+            let detailsLength = $('#details').val().length;
+            if (detailsLength < 50 || detailsLength > 500) {
+                alert("Details field must be minimum of 50 and maximum of 500 characters only!");
+            } else {
+                alert("Booking Successful!");
+            }
+            // event.preventDefault();
+        }
+        // DETAILS FIELD - BOOK NOW SEC 
+    </script>
+
+    <link rel="stylesheet" href=".\style.css">
+
+</head>
+
+<body>
+    <!-- start of nav area -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/plane_9639471.png" alt="Logo" width="30" height="30">
+            </a>
+
+            <span class="navbar-brand brandname mb-0 h1">Anywhere-Anytime</span>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" id="navlinks">
+                        <a class="nav-link" href="#changetext">Home</a>
+                    </li>
+
+                    <li class="nav-item" id="navlinks">
+                        <a class="nav-link" href="#bookform">Book</a>
+                    </li>
+
+                    <li class="nav-item dropdown" id="navlinks">
+                        <a class="nav-link dropdown-toggle" href="#packages-heading" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Packages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">United States</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">India</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">France</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Germany</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="navlinks">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item" id="navlinks">
+                        <a class="nav-link" href="#slider-heading">Gallery</a>
+                    </li>
+                    <li class="nav-item" id="navlinks">
+                        <a class="nav-link" href="#aboutsec-image">About</a>
+                    </li>
+                    <li class="nav-item" id="navlinks">
+                        <a class="nav-link" href="#contactus">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal">
+                        Login
+                    </button>
+
+                    <button type="button" class="btn btn-primary" id="registernav" data-bs-toggle="modal"
+                        data-bs-target="#registerModal">
+                        Register
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navigation  -->
+
+
+    <!-- change text area  -->
+    <div class="container-fluid py-5" id="hero">
+        <h4>Welcome to <b><i>Anywhere-Anytime</i></b></h4>
+        <br>
+        <h1>Visit </h1>
+        <h1><span id="changetext"></span></h1>
+        <br>
+        <h6>Hurrah! Avail exciting offers <b>Upto 30%</b> on early bookings! </h6>
+        <br>
+        <button class="btn" type="submit">Book Now</button>
+    </div>
+    <!-- end of change text area  -->
+
+
+    <br> <br> <br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- booking section -->
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12" id="form-heading">
+                <h3>Book your dream <i>vacay</i> today</h3>
+            </div>
+            <br><br>
+
+            <div class="col-md-3">
+                <video src="images/4340788-hd_1080_1920_25fps.mp4" width="1500" height="" class="image-fluid" autoplay
+                    loop muted></video>
+            </div>
+            <div class="col-md-9" id="bookform">
+                <form onsubmit="handleBooked()">
+                    <div class="form-group">
+                        <br>
+                        <select class="form-select" aria-label="Default select example" required>
+                            <option selected>Where to</option>
+                            <option value="1">United states </option>
+                            <option value="2">India</option>
+                            <option value="3">France</option>
+                            <option value="3">Germany</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" placeholder="How many person" class="form-control" min="1" required><br>
+                    </div>
+
+                    <!-- start date  -->
+                    <div class="form-group">
+                        <input id="startdate" type="date" placeholder="mm/dd/yyyy" class="form-control"
+                            onclick="startDateEvent()" max="2100-02-29" required><br>
+                    </div>
+
+
+                    <!-- end date  -->
+                    <div class="form-group">
+                        <input type="date" id="enddate" placeholder="mm/dd/yyyy" class="form-control"
+                            onclick="endDateEvent()" max="2100-02-29" required><br>
+                    </div>
+
+
+
+                    <div class="form-group" id="details-field">
+                        <div class="form-floating">
+
+
+                            <!-- <textarea class="form-control" placeholder="Enter your name & details"
+                                id="floatingTextarea2" style="height: 100px"></textarea> -->
+
+                            <textarea id="details" rows="7" cols="150" required></textarea>
+
+                            <!-- <label>Enter your name and details</label> -->
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-warning" value="Book Now">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of booking section  -->
+
+    <!-- package section  -->
+
+    <div class="container-fluid" id="package-section">
+        <div class="row">
+            <div class="col-md-12" id="packages-heading">
+                <h3>Trending Destinations</h3>
+            </div>
+            <!-- first row of packages  -->
+            <br>
+            <div class="col-md-4" id="packages-card">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/india.jpg" alt="India-Tajmahal" class="image-fluid">
+                        <h4 id="destinations">India</h4>
+                        <p id="attractions">Ajanta Caves, Taj Mahal, Chola Temples, Humayun's Tomb, Sun Temple </p>
+                        <p>Price:$500</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/france.jpg" alt="France" class="image-fluid">
+
+                        <h4 id="destinations">France</h4>
+                        <p id="attractions">Eiffel Tower, Louvre Museum, Luxembourg Gardens, Arc de Triomphe, Musée
+                            d'Orsay </p>
+                        <p>Price:$800</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/germany.jpg" alt="Germany" class="image-fluid">
+
+                        <h4 id="destinations">Germany</h4>
+                        <p id="attractions">Cologne Cathedral, Brandenburg Gate, Marienplatz, Pergamon Museum, Reichstag
+                            Building.</p>
+                        <p>Price:$700</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- END of first row of packages  -->
+    <br><br>
+    <!-- SECOND row of packages  -->
+    <div class="container-fluid" id="package-section">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/usa.jpg" alt="United States" class="image-fluid">
+
+                        <h4 id="destinations">United States of America</h4>
+                        <p id="attractions">Central Park, Statue of liberty, Golden Gate Bridge, Mount Rushmore, Grand
+                            Canyon.</p>
+                        <p>Price:$900</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/uk.jpg" alt="United Kingdom" class="image-fluid">
+
+                        <h4 id="destinations">United KIngdom</h4>
+                        <p id="attractions">Windsor castle, British Museum, Tower of London, Buckingham Palace, The
+                            London Eye. </p>
+                        <p>Price:$800</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/nz.jpg" alt="Newzealand" class="image-fluid">
+
+                        <h4 id="destinations">New Zealand</h4>
+                        <p id="attractions">Queenstown, Auckland Museum, Bay of Islands, Sky Tower, The Coromandel,
+                            Christchurch botanic gardens. </p>
+                        <p>Price:$900</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- END OF SECOND row of packages  -->
+    <br><br>
+    <!-- THIRD row of packages  -->
+    <div class="container-fluid" id="package-section">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/sg.jpg" alt="Singapore" class="image-fluid">
+
+                        <h4 id="destinations">Singapore</h4>
+                        <p id="attractions">Gardens by the Bay, Marina Bay Sands, Singapore flyer, Singapore Zoo, Jewel
+                            Changi, National Museum of Singapore.</p>
+                        <p>Price:$500</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/australia.jpg" alt="Australia" class="image-fluid">
+
+                        <h4 id="destinations">Australia</h4>
+                        <p id="attractions"> Sydney Opera house, Royal Botanic garden, Harbour Bridge, Mount Wellington,
+                            Bondi to Coogee walk.</p>
+                        <p>Price:$500</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+
+                        <br>
+
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./images/canada.jpg" alt="Canada" class="image-fluid">
+
+                        <h4 id="destinations">Canada</h4>
+                        <p id="attractions">CN Tower, Stanley Park, Niagara Falls, Banff National park, Athabasca
+                            Glacier, Okanagan Valley, Peggy's Cove.</p>
+                        <p>Price:$500</p>
+                        <div id="star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <br>
+                        <button class="btn btn-warning">Book Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END OF THIRD row of packages  -->
+    <!-- end of package section  -->
+
+    <!-- services section  -->
+
+    <div class="container-fluid" id="services">
+        <div class="row">
+
+            <div class="col-md-12 text-center" id="services-heading">
+                SERVICES OFFERED
+            </div>
+
+            <br><br>
+
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body text-center" id="services-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
+                            class="bi bi-ticket-detailed" viewBox="0 0 16 16">
+                            <path
+                                d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M5 7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2z" />
+                            <path
+                                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                        <br>
+                        Cheaper Ticket bookings
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body text-center" id="services-card">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
+                            class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+                        </svg>
+                        <br>
+
+                        Car Rentals
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body text-center" id="services-card">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
+                            class="bi bi-journals" viewBox="0 0 16 16">
+                            <path
+                                d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2" />
+                            <path
+                                d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0" />
+                        </svg>
+                        <br>
+
+                        Safety Guide
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body text-center" id="services-card">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
+                            class="bi bi-cup-hot-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6zM13 12.5a2 2 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5" />
+                            <path
+                                d="m4.4.8-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 3.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 6.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 9.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8" />
+                        </svg>
+                        <br>
+
+                        Food and Drinks
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body text-center" id="services-card">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
+                            class="bi bi-building-check" viewBox="0 0 16 16">
+                            <path
+                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514" />
+                            <path
+                                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z" />
+                            <path
+                                d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                        <br>
+
+                        Affordable hotel bookings
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body text-center" id="services-card">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
+                            class="bi bi-journal-text" viewBox="0 0 16 16">
+                            <path
+                                d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+                            <path
+                                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+                            <path
+                                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+                        </svg>
+                        <br>
+
+                        Tour plans
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end of services section  -->
+    <br><br><br>
+
+
+    <!-- minislider -->
+    <div class="container">
+        <div class="col-md-12 text-center" id="slider-heading">Our Famous Destinations</div>
+        <div class="row slider">
+
+            <div class="col-md-12">
+                <figure>
+                    <figcaption> Australia </figcaption>
+                </figure>
+                <img src="images/australia.jpg" alt="Australia">
+            </div>
+            <div class="col-md-12">
+                <figure>
+                    <figcaption> Canada </figcaption>
+                </figure>
+                <img src="images/canada.jpg" alt="Canada">
+            </div>
+            <div class="col-md-12">
+                <figure>
+                    <figcaption> France </figcaption>
+                </figure>
+                <img src="images/france.jpg" alt="France">
+            </div>
+            <div class="col-md-12">
+                <figure>
+                    <figcaption> Germany </figcaption>
+                </figure>
+                <img src="images/germany.jpg" alt="Germany">
+            </div>
+            <div class="col-md-12">
+                <figure>
+                    <figcaption> United Kingdom </figcaption>
+                </figure>
+                <img src="images/uk.jpg" alt="United Kingdom">
+            </div>
+            <div class="col-md-12">
+                <figure>
+                    <figcaption> New Zealand </figcaption>
+                </figure>
+                <img src="images/nz.jpg" alt="nz">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- end of minislider  -->
+
+    <!-- Register modal  -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="registerModalModalLabel">Register Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullname">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phonenumber" class="form-label">Contact</label>
+                            <input type="number" class="form-control" id="phonenumber">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dateofbirth" class="form-label">DOB</label>
+                            <input type="date" class="form-control" id="dateofbirth">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select name="gender" id="gender" class="form-control">
+                                <option value=" " disabled selected>Select your option</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+
+                        <div id="register-footer">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <a data-toggle="modal" href="#" id="loginbtn">Already have an account? Login</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of register modal  -->
+
+
+    <!-- login modal -->
+    <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+
+                        <div class="mb-3">
+                            <label for="emaillogin" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emaillogin">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="loginpassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginpassword">
+                        </div>
+
+                        <div class="modal-footer" id="login-footer">
+                            <button type="submit" class="btn btn-primary">Login</button>
+
+                            <a data-toggle="modal" href="#" id="registerbtn"
+                                style="color: #ed5109;text-decoration: none;">New
+                                User?</a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of login modal  -->
+
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <!-- Image column -->
+                <div class="col-md-6">
+                    <img src="./images/aboutus.jpg" id="aboutsec-image" class="img-fluid" alt="Travel Agency Image">
+                </div>
+                <!-- Text column -->
+                <div class="col-md-6 about-text">
+                    <h2>About Anytime-Anywhere</h2>
+                    <p>Mission:
+                        Our mission is to inspire and enable travelers to explore the world with confidence,
+                        providing
+                        exceptional experiences that exceed expectations and create lasting memories.</p>
+
+                    <p> Vision:
+                        Our vision is to become the leading provider of personalized and transformative travel
+                        experiences, recognized for our commitment to excellence, innovation, and customer
+                        satisfaction.
+                    </p>
+                    <p> Establishment Date:
+                        Founded in [Year], our journey began with a passion for travel and a vision to redefine the
+                        way
+                        people explore the world.</p>
+
+                    <p>Company Overview:
+                        Anytime-Anywhere is a premier travel company dedicated to curating unforgettable journeys
+                        for
+                        discerning travelers. With years of industry expertise, we specialize in crafting bespoke
+                        itineraries tailored to individual preferences, ensuring every trip is unique and
+                        extraordinary.
+                    </p>
+
+                    <p>Services:
+
+                        Customized Itineraries: Tailored to individual preferences and interests. <br>
+                        Group Tours: Exciting group tours led by experienced guides.<br>
+                        Luxury Travel: Exclusive experiences and accommodations for discerning travelers.<br>
+                        Adventure Travel: Thrilling adventures for the adrenaline enthusiast.<br>
+                        Corporate Travel: Comprehensive travel solutions for businesses and organizations.<br>
+                        Destination Weddings: Magical weddings in exotic locations, meticulously planned and
+                        executed.<br>
+                    </p>
+
+                    <p id="contactus">
+                        Contact Information:
+                        Address: 83, Coleman St, Gurgaon. <br>
+                        Phone: +91 8888 5555 <br>
+                        Email: anytime-anywhere@yahoomail.in <br>
+                        Website: anytimeanywhere.co.in
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <h4>Follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div id="signup">
+                <a href="#registernav">Sign Up</a>
+            </div>
+            <div class="row">
+                <div id="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#bookform">Book</a>
+                    <a href="#package-section">Packages</a>
+                    <a href="#services">Services</a>
+                    <a href="#contactus">Contact us</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>&copy; 2024 Anytime Anywhere</p>
+                    <p>All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"
+        integrity="sha512-KgffulL3mxrOsDicgQWA11O6q6oKeWcV00VxgfJw4TcM8XRQT8Df9EsrYxDf7tpVpfl3qcYD96BpyPvA4d1FDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+
+
+<script>
+    $('.slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Handle click event of login button
+        $('#loginbtn').click(function () {
+            // Close the register modal
+            $('#registerModal').modal('hide');
+            // Open the login modal
+            $('#loginmodal').modal('show');
+        });
+
+        $('#registerbtn').click(function () {
+            // Close the register modal
+            $('#loginmodal').modal('hide');
+            // Open the login modal
+            $('#registerModal').modal('show');
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Function to validate email format
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Function to perform form validation
+        function validateRegisterForm() {
+            var fullName = $('#fullname').val().trim();
+            var phoneNumber = $('#phonenumber').val().trim();
+            var dob = $('#dateofbirth').val().trim();
+            var email = $('#exampleInputEmail1').val().trim();
+            var password = $('#exampleInputPassword1').val().trim();
+            var gender = $('#gender').val().trim();
+
+            // Check if required fields are empty
+            if (fullName === '' || phoneNumber === '' || dob === '' || email === '' || password === '' || gender === '') {
+                alert('Please fill out all required fields.');
+                return false;
+            }
+
+            // Check email format
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert('Password length should be more than 8 characters!');
+                return false;
+            }
+
+            const phoneNumberPattern = /^\d{10}$/; // 10 digits phone number pattern
+
+            if (!phoneNumberPattern.test(phoneNumber)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false; // Prevent form submission
+            }
+
+            // Validation passed
+            return true;
+        }
+
+        function validateLoginForm() {
+            var email = $('#emaillogin').val().trim();
+            var password = $('#loginpassword').val().trim();
+
+            if (email === '' || password === '') {
+                alert('Please fill out all required fields.');
+                return false;
+            }
+
+            // Check email format
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert('Password length should be more than 8 characters!');
+                return false;
+            }
+
+            // Validation passed
+            return true;
+        }
+
+        // Handle form submission
+        $('#register-form').submit(function (event) {
+            // Prevent default form submission
+
+            event.preventDefault();
+            console.log("Register form submitted")
+            // Perform form validation
+            if (validateRegisterForm()) {
+                // Form validation passed, you can proceed with form submission or other actions
+                // For demonstration purpose, let's just alert that validation passed
+                alert('Form validation passed! User Created!');
+            }
+        });
+
+        $('#login-form').submit(function (event) {
+            // Prevent default form submission
+
+            event.preventDefault();
+            console.log("Successfully logged in.")
+            // Perform form validation
+            if (validateLoginForm()) {
+                // Form validation passed, you can proceed with form submission or other actions
+                // For demonstration purpose, let's just alert that validation passed
+                alert('Form validation passed! Logged in!');
+            }
+        });
+    });
+</script>
+
+</html>

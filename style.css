@@ -1,0 +1,508 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.btn {
+    margin-right: 20px;
+}
+
+.brandname {
+    font-family: "Lobster", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    font-style: normal;
+    padding: 0px;
+    color: hsl(36, 95%, 48%) !important;
+}
+
+#navlinks:hover>a {
+    /* margin-top: 8px; */
+    color: hwb(41 4% 4%) !important;
+}
+
+body {
+    background-image: url("./images/tourist-sitting-phu-sub-lek-viewpoint-sunset-lopburi-thailand_335224-1390.jpeg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+html,
+body {
+    height: 78vh;
+}
+
+.navbar {
+    background-color:hsl(0, 0%, 95%);
+
+}
+
+.nav-link {
+    color: #0b0a0a;
+    font-weight: bolder;
+}
+
+.dropdown-item:hover {
+    color: hsl(27, 88%, 54%);
+
+}
+
+.container-fluid.py-5 {
+    /* width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 100%; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+
+
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #040404;
+
+
+}
+
+#bookbtn {
+    background: #391a01;
+    color: #4a2609;
+
+
+}
+
+#changetext {
+    color: #ed6809;
+}
+
+#changetext::after {
+    content: "";
+    animation-name: changetextanim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes changetextanim {
+    0% {
+        content: "United States";
+    }
+
+    25% {
+        content: "India";
+    }
+
+    50% {
+        content: "France";
+    }
+
+    75% {
+        content: "Germany";
+    }
+
+    100% {
+        content: "United States";
+    }
+}
+
+.btn {
+    color: #fff;
+    /* background-color: #f3750e; */
+    background: #ed5109;
+    border-color: #ed5109;
+}
+
+.btn:hover {
+    background-color: rgb(49, 32, 10);
+    color: #fff;
+}
+
+.image-fluid {
+    width: 100%;
+    height: 70vh;
+}
+
+#form-heading {
+    text-align: center;
+    margin-top: 50px;
+    /* font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+    color: #ed5109;
+    font-size: xx-large;
+    padding-top: 50px;
+
+    /* background-color: #3495d525; */
+
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+/* .card {
+    background-color: #3495d525;
+} */
+
+ /* #package-section {
+    background-color: #3495d525; 
+} */
+
+
+
+#packages-heading {
+    text-align: center;
+    color: #ed5109;
+    padding-top: 50px;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+    /* background-color: #3495d525; */
+}
+
+/* #packages-card{
+    background-color:  #3495d525;
+} */
+
+#package-section .card img {
+    /* width: 300px ; */
+    height: 250px;
+}
+
+#package-section #star {
+    color: #ed5109;
+    font-size: 15px;
+}
+
+/* #services {
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    padding-bottom: 50px;
+} */
+
+
+
+/* #services-heading:hover {
+    text-decoration-line: underline;
+} */
+
+#services-heading {
+    /* font-family: "Sigmar", sans-serif;
+    font-weight: 600;
+    font-style:italic; */
+    padding-top: 50px;
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+    /* background-color: #3495d525; */
+
+    /* color: #d9830b  ; */
+    color: #ed5109;
+}
+
+#services .card-body:hover {
+    color: #ed5109;
+    /* text-decoration-line: underline; */
+    background-color: rgb(49, 32, 10);
+
+
+}
+
+#services .card-body {
+    /* background-color: #3495d525; */
+    font-family: "Exo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+/* #bookform {
+    background-color: #3495d525;
+}
+
+#bookform .form {
+    background-color: azure;
+} */
+
+#attractions {
+    font-weight: 500;
+    /* font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #040404 ;
+    font-size:medium; */
+}
+
+#destinations {
+    /* font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal; */
+    color: #f60909;
+    font-size: xx-large;
+
+
+
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+
+.about-section {
+    padding: 50px 0;
+}
+
+.about-section .about-text {
+    padding: 0 50px;
+}
+
+.about-section h2 {
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    line-height: 1.8;
+}
+
+.about-section .about-image {
+    max-width: 100%;
+    /* Ensure the image doesn't exceed the column width */
+    height: auto;
+    max-height: 300px;
+    /* Maintain aspect ratio */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin: 0px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+#gallery-heading{
+    padding-top: 50px;
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+    color: #ed5109;
+
+}
+
+#register-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider img{
+    width: 400px;
+    height: 300px;
+    margin-right: 10px;
+}
+
+.slider img:hover{
+    transform: scale(1.3, 1.1);
+}
+
+figcaption{
+    text-align: center;
+    margin-left: -40px;
+    color: #ed5109;
+}
+
+.about-text p{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.about-text h2{
+    color: #ed5109;
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+.about-section #aboutsec-image{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#slider-heading{
+    color: #ed5109;
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+footer .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+#footer-links a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+    font-weight: bold;
+    font-size: larger;
+    
+}
+
+#footer-links{
+    margin: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#signup a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+    font-weight: bold;
+    font-size: larger; 
+}
+
+#loginbtn{
+    color: #ed5109;
+    text-decoration: none;
+}
